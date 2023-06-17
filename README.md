@@ -1,0 +1,1 @@
+# swift-openapi-generator-mockoon-tutorial
