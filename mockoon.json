@@ -1,0 +1,1 @@
+{"openapi":"3.0.0","info":{"title":"IP geolocation API","version":"1.0.0"},"servers":[{"url":"http://localhost:3000/"}],"paths":{"/v1/":{"get":{"description":"Retrieve the location of an IP address","responses":{"200":{"description":"Location of geolocated IP","content":{"application/json":{}},"headers":{}},"400":{"description":"","content":{},"headers":{}}}}}}}
