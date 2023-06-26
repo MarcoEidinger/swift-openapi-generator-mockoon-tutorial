@@ -45,7 +45,7 @@ struct ContentView: View {
     }
     
     func fetchData() async throws {
-        let response = try await client.get_v1(.init(query: .init(api_key: "fakeApiKey", ip_address:  "73.158.231.173")))
+        let response = try await client.get_v1_(.init(query: .init(api_key: "fakeApiKey", ip_address:  "73.158.231.173")))
         switch response {
         case .ok(let okresponse):
             switch okresponse.body {

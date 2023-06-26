@@ -31,13 +31,17 @@ public struct Client: APIProtocol {
         )
     }
     private var converter: Converter { client.converter }
-    /// Operation performs `GET` on `/v1`
-    public func get_v1(_ input: Operations.get_v1.Input) async throws -> Operations.get_v1.Output {
+    /// Retrieve the location of an IP address
+    ///
+    /// - Remark: HTTP `GET /v1/`.
+    /// - Remark: Generated from `#/paths//v1//get`.
+    public func get_v1_(_ input: Operations.get_v1_.Input) async throws -> Operations.get_v1_.Output
+    {
         try await client.send(
             input: input,
-            forOperation: Operations.get_v1.id,
+            forOperation: Operations.get_v1_.id,
             serializer: { input in
-                let path = try converter.renderedRequestPath(template: "/v1", parameters: [])
+                let path = try converter.renderedRequestPath(template: "/v1/", parameters: [])
                 var request: OpenAPIRuntime.Request = .init(path: path, method: .get)
                 suppressMutabilityWarning(&request)
                 try converter.setQueryItemAsText(
@@ -65,12 +69,12 @@ public struct Client: APIProtocol {
             deserializer: { response in
                 switch response.statusCode {
                 case 200:
-                    let headers: Operations.get_v1.Output.Ok.Headers = .init()
+                    let headers: Operations.get_v1_.Output.Ok.Headers = .init()
                     try converter.validateContentTypeIfPresent(
                         in: response.headerFields,
                         substring: "application/json"
                     )
-                    let body: Operations.get_v1.Output.Ok.Body =
+                    let body: Operations.get_v1_.Output.Ok.Body =
                         try converter.getResponseBodyAsJSON(
                             Components.Schemas.inline_response_200.self,
                             from: response.body,

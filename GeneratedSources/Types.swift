@@ -7,8 +7,11 @@ import Foundation
 #endif
 /// A type that performs HTTP operations defined by the OpenAPI document.
 public protocol APIProtocol: Sendable {
-    /// Operation performs `GET` on `/v1`
-    func get_v1(_ input: Operations.get_v1.Input) async throws -> Operations.get_v1.Output
+    /// Retrieve the location of an IP address
+    ///
+    /// - Remark: HTTP `GET /v1/`.
+    /// - Remark: Generated from `#/paths//v1//get`.
+    func get_v1_(_ input: Operations.get_v1_.Input) async throws -> Operations.get_v1_.Output
 }
 /// Server URLs defined in the OpenAPI document.
 public enum Servers {
@@ -318,15 +321,18 @@ public enum Components {
 }
 /// API operations, with input and output types, generated from `#/paths` in the OpenAPI document.
 public enum Operations {
-    /// Operation performs `GET` on `/v1`
-    public enum get_v1 {
-        public static let id: String = "get/v1"
+    /// Retrieve the location of an IP address
+    ///
+    /// - Remark: HTTP `GET /v1/`.
+    /// - Remark: Generated from `#/paths//v1//get`.
+    public enum get_v1_ {
+        public static let id: String = "get/v1/"
         public struct Input: Sendable, Equatable, Hashable {
             public struct Path: Sendable, Equatable, Hashable {
                 /// Creates a new `Path`.
                 public init() {}
             }
-            public var path: Operations.get_v1.Input.Path
+            public var path: Operations.get_v1_.Input.Path
             public struct Query: Sendable, Equatable, Hashable {
                 public var api_key: Swift.String
                 public var ip_address: Swift.String?
@@ -347,19 +353,19 @@ public enum Operations {
                     self.fields = fields
                 }
             }
-            public var query: Operations.get_v1.Input.Query
+            public var query: Operations.get_v1_.Input.Query
             public struct Headers: Sendable, Equatable, Hashable {
                 /// Creates a new `Headers`.
                 public init() {}
             }
-            public var headers: Operations.get_v1.Input.Headers
+            public var headers: Operations.get_v1_.Input.Headers
             public struct Cookies: Sendable, Equatable, Hashable {
                 /// Creates a new `Cookies`.
                 public init() {}
             }
-            public var cookies: Operations.get_v1.Input.Cookies
+            public var cookies: Operations.get_v1_.Input.Cookies
             public enum Body: Sendable, Equatable, Hashable {}
-            public var body: Operations.get_v1.Input.Body?
+            public var body: Operations.get_v1_.Input.Body?
             /// Creates a new `Input`.
             ///
             /// - Parameters:
@@ -369,11 +375,11 @@ public enum Operations {
             ///   - cookies:
             ///   - body:
             public init(
-                path: Operations.get_v1.Input.Path = .init(),
-                query: Operations.get_v1.Input.Query,
-                headers: Operations.get_v1.Input.Headers = .init(),
-                cookies: Operations.get_v1.Input.Cookies = .init(),
-                body: Operations.get_v1.Input.Body? = nil
+                path: Operations.get_v1_.Input.Path = .init(),
+                query: Operations.get_v1_.Input.Query,
+                headers: Operations.get_v1_.Input.Headers = .init(),
+                cookies: Operations.get_v1_.Input.Cookies = .init(),
+                body: Operations.get_v1_.Input.Body? = nil
             ) {
                 self.path = path
                 self.query = query
@@ -389,20 +395,20 @@ public enum Operations {
                     public init() {}
                 }
                 /// Received HTTP response headers
-                public var headers: Operations.get_v1.Output.Ok.Headers
+                public var headers: Operations.get_v1_.Output.Ok.Headers
                 public enum Body: Sendable, Equatable, Hashable {
                     case json(Components.Schemas.inline_response_200)
                 }
                 /// Received HTTP response body
-                public var body: Operations.get_v1.Output.Ok.Body
+                public var body: Operations.get_v1_.Output.Ok.Body
                 /// Creates a new `Ok`.
                 ///
                 /// - Parameters:
                 ///   - headers: Received HTTP response headers
                 ///   - body: Received HTTP response body
                 public init(
-                    headers: Operations.get_v1.Output.Ok.Headers = .init(),
-                    body: Operations.get_v1.Output.Ok.Body
+                    headers: Operations.get_v1_.Output.Ok.Headers = .init(),
+                    body: Operations.get_v1_.Output.Ok.Body
                 ) {
                     self.headers = headers
                     self.body = body
@@ -410,10 +416,10 @@ public enum Operations {
             }
             /// Location of geolocated IP
             ///
-            /// - Remark: Generated from `#/paths//v1/get/responses/200`.
+            /// - Remark: Generated from `#/paths//v1//get/responses/200`.
             ///
             /// HTTP response code: `200 ok`.
-            case ok(Operations.get_v1.Output.Ok)
+            case ok(Operations.get_v1_.Output.Ok)
             /// Undocumented response.
             ///
             /// A response with a code that is not documented in the OpenAPI document.
